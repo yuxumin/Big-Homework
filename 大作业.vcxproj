@@ -78,13 +78,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\ConsoleApplication14\ConsoleApplication14\源1.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="User.cpp" />
     <ClCompile Include="大作业.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

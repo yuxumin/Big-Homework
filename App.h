@@ -8,12 +8,14 @@ public:
 	App(bool a):Continue(a){}
 	void Start();
 	int MainMune();
+	bool SignInMune();
 	void SetScore();
 	void ChangeScore();
 	void FindScore();
 	void Exit();
 	bool Continue;
 	bool Exwhile;
-	friend void CopyList(ifstream& inf);
+	void Quit();
+//	friend void CopyList(ifstream& inf);
 };
 #endif // !APP_H

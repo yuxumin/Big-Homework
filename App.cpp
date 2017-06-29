@@ -324,6 +324,7 @@ bool App::SignInMune(){
 		CopySource.close();
 		system("cls");
 		system("color 3f");
+		system("title 学生管理系统登陆");
 		system("mode con cols=56 lines=20"); 
 		cout<<"┌—————————————————————————┐\n";
 		cout<<"│                  学生成绩管理系统                │\n";
@@ -354,8 +355,11 @@ bool App::SignInMune(){
 			cout<<"│[2]、老师                                         │\n";
 			cout<<"│                                                  │\n";
 			cout<<"│[3]、返回                                         │\n";
-	//		cout<<"│                                                  │\n";
-	//		cout<<"│[作者]、翁丽霞的男朋友                            │\n";
+	if(UserRight ==0)	
+		{
+			cout<<"│                                                  │\n";
+			cout<<"│[作者]、翁丽霞的男朋友                            │\n";
+		}
 			cout<<"└—————————————————————————┘\n";
 			int choice;
 			int FindIt = 0;
@@ -384,10 +388,11 @@ bool App::SignInMune(){
 						NewUser.Fout(RegisterFile);
 						RegisterFile.close();
 						cout<<"注册成功！"<<endl;
+						return true;
 					}
 					else cout<<"注册失败！用户名已存在！"<<endl;
-					cout<<"即将跳转至登陆界面";
-					cout<<"按任意键继续... ..."<<endl;system("pause>nul 2>nul");
+				cout<<"即将跳转至登陆界面";
+				cout<<"按任意键继续... ..."<<endl;system("pause>nul 2>nul");
 				return true;
 				}
 		}
@@ -563,6 +568,20 @@ bool App::SignInMune(){
 							}
 			if(Buff==1)
 			{
+				system("cls");
+				cout<<endl;
+				cout<<endl;
+				cout<<endl;
+				cout<<endl;
+				cout<<endl;
+				cout<<"┌—————————————————————————┐\n";
+				cout<<"│          Valid User Number and PassWord!!!       │\n";
+				cout<<"│                                                  │\n";
+				cout<<"│                  正在登陆...                     │\n";
+				cout<<"│                                                  │\n";
+				cout<<"└—————————————————————————┘\n";
+				cout<<"          即将跳转回登陆界面......\n";
+				system("pause>nul 2>nul"); 
 				Exwhile = true;
 				int flag = 0;
 				while(Exwhile)

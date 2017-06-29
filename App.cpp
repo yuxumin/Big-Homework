@@ -69,7 +69,7 @@ void App::ChangeScore(){
 						int NewScore;
 						cin>>NewScore;
 						list[i].SetCalculus(NewScore);
-						cout<<"***********************修改成功！************************"<<endl;
+						cout<<"***********************修改成功！***********************"<<endl;
 					}
 			}
 			if(SubjectNumber==2)
@@ -85,7 +85,7 @@ void App::ChangeScore(){
 						int NewScore;
 						cin>>NewScore;
 						list[i].SetLinear(NewScore);
-						cout<<"***********************修改成功！***********************"<<endl;
+						cout<<"***********************修改成功！**********************"<<endl;
 					}
 			}
 			if(SubjectNumber==3)
@@ -101,7 +101,7 @@ void App::ChangeScore(){
 						int NewScore;
 						cin>>NewScore;
 						list[i].SetDiscrete(NewScore);
-						cout<<"***********************修改成功！************************"<<endl;
+						cout<<"***********************修改成功！***********************"<<endl;
 					}
 			}
 			if(SubjectNumber==4)

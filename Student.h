@@ -5,7 +5,7 @@ using namespace std;
 enum subject{Calculus,Linear,Discrete};
 class Student{
 public:
-	Student(char *s = "",int GradeCalculus = 0,int GradeLinear = 0,int GradeDiscrete = 0);
+	Student(char *s = "*",int GradeCalculus = 0,int GradeLinear = 0,int GradeDiscrete = 0);
 	void SetName(char *s);
 	void SetScore(int NewScore[3]);
 	void Fout(ofstream&of);

@@ -132,7 +132,7 @@ void App::ChangeScore(){
 						cin>>NewScore[2];
 						cout<<endl;
 						list[i].SetScore(NewScore);
-						cout<<"***********************修改成功！************************"<<endl;
+						cout<<"*********************修改成功！*************************"<<endl;
 					}
 			}
 			

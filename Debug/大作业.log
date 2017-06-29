@@ -1,8 +1,12 @@
-﻿生成启动时间为 2017/6/29 10:13:21。
+﻿生成启动时间为 2017/6/29 11:07:30。
      1>项目“G:\vs12文件\大作业\大作业\大作业.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         F:\V s2012\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt App.cpp
+         F:\V s2012\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt App.cpp Student.cpp "大作业.cpp"
          App.cpp
+         正在生成代码...
+         正在跳过...(未检测到相关更改)
+         大作业.cpp
+         Student.cpp
        Link:
          F:\V s2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\vs12文件\大作业\Debug\大作业.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\vs12文件\大作业\Debug\大作业.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\vs12文件\大作业\Debug\大作业.lib" /MACHINE:X86 Debug\App.obj
          Debug\Student.obj
@@ -12,4 +16,4 @@
 
 生成成功。
 
-已用时间 00:00:03.61
+已用时间 00:00:01.68

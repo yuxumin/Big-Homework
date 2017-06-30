@@ -10,8 +10,9 @@ void Aixin();
 extern Student list[500];
 extern user UserList[500];
 static int number;
+static int times = 0;//彩蛋次数，注销变为0
 static int usernumber;
-static int UserRight = 1;
+static int UserRight = 1; 
 static int Buff = 0;        //一旦登入就变为1，注销变为0
 const char Subject[3][20]={"微积分","线性代数","离散数学"};
 void CopyUserList(ifstream&inf)
@@ -116,8 +117,10 @@ void App::ChangeScore(){
 					cout<<"│    [简单说明]：修改成绩界面，谢谢您的使用！      │\n";
 					cout<<"└—————————————————————————┘\n";
 					int SubjectNumber;
+					bool Fault = true;
 					cin>>SubjectNumber;
 					system("cls");
+					if(cin.fail()||SubjectNumber!=1||SubjectNumber!=2||SubjectNumber!=3||SubjectNumber!=4){cin.clear();cin.sync();Fault = false;}
 					if(SubjectNumber==1)
 					{
 						cout<<"确定要修改"<<Tempname<<"同学的微积分成绩吗？(y/n)"<<endl;
@@ -134,7 +137,7 @@ void App::ChangeScore(){
 								cout<<"***********************修改成功！***********************"<<endl;
 							}
 					}
-					if(SubjectNumber==2)
+					else if(SubjectNumber==2)
 					{
 						cout<<"确定要修改"<<Tempname<<"同学的线性代数成绩吗？(y/n)"<<endl;
 						char a;
@@ -150,7 +153,7 @@ void App::ChangeScore(){
 								cout<<"***********************修改成功！**********************"<<endl;
 							}
 					}
-					if(SubjectNumber==3)
+					else if(SubjectNumber==3)
 					{
 						cout<<"确定要修改"<<Tempname<<"同学的离散数学成绩吗？(y/n)"<<endl;
 						char a;
@@ -166,7 +169,7 @@ void App::ChangeScore(){
 								cout<<"***********************修改成功！***********************"<<endl;
 							}
 					}
-					if(SubjectNumber==4)
+					else if(SubjectNumber==4)
 					{
 						cout<<"确定要修改"<<Tempname<<"同学的全部成绩吗？(y/n)"<<endl;
 						char a;
@@ -196,6 +199,21 @@ void App::ChangeScore(){
 								list[i].SetScore(NewScore);
 								cout<<"*********************修改成功！*************************"<<endl;
 							}
+					}
+					if(!Fault)
+					{
+						system("cls");
+						cout<<endl;
+						cout<<endl;
+						cout<<endl;
+						cout<<endl;
+						cout<<endl;
+						cout<<"┌—————————————————————————┐\n";
+						cout<<"│          A Unexpected error occurred!!!          │\n";
+						cout<<"│                                                  │\n";
+						cout<<"│                  非法指令！  ！                  │\n";
+						cout<<"│                                                  │\n";
+						cout<<"└—————————————————————————┘\n";     
 					}
 				}
 				else
@@ -283,8 +301,10 @@ void App::FindScore()
 				cout<<"│    [简单说明]：查询成绩界面，谢谢您的使用！      │\n";
 				cout<<"└—————————————————————————┘\n";
 				int SubjectNumber;
+				bool Fault;
 				cin>>SubjectNumber;
 				system("cls");
+				if(cin.fail()||SubjectNumber!=1||SubjectNumber!=2||SubjectNumber!=3||SubjectNumber!=4){cin.clear();cin.sync();Fault = false;}
 			if(SubjectNumber==1||SubjectNumber==2||SubjectNumber==3)
 	//		cout<<"这门课程的成绩是:"<<list[i].GetGrade()[SubjectNumber-1]<<endl;
 				{
@@ -293,7 +313,7 @@ void App::FindScore()
 				cout<<left<<setw(4)<<list[i].GetGrade()[SubjectNumber-1]<<"   │\n";
 				cout<<"└—————————————————————————┘\n";
 				}
-			if(SubjectNumber==4)
+			else if(SubjectNumber==4)
 				{
 				cout<<"┌—————————————————————————┐\n";
 				cout<<" "<<Tempname<<"      "<<Subject[0]<<"                       ";
@@ -303,6 +323,22 @@ void App::FindScore()
 				cout<<" "<<Tempname<<"      "<<Subject[2]<<"                     ";
 				cout<<left<<setw(4)<<list[i].GetGrade()[2]<<"    \n";
 				cout<<"└—————————————————————————┘\n";
+				}
+				if(!Fault)
+				{
+						system("cls");
+						cout<<endl;
+						cout<<endl;
+						cout<<endl;
+						cout<<endl;
+						cout<<endl;
+						cout<<"┌—————————————————————————┐\n";
+						cout<<"│          A Unexpected error occurred!!!          │\n";
+						cout<<"│                                                  │\n";
+						cout<<"│                  非法指令！  ！                  │\n";
+						cout<<"│                                                  │\n";
+						cout<<"└—————————————————————————┘\n"; 
+
 				}
 			}
 			else 
@@ -396,7 +432,6 @@ void App::SetScore(){
 	}
 }
 bool App::SignInMune(){
-	
 	if(Buff==0)
 	{
 		ifstream CopySource;
@@ -817,17 +852,18 @@ void App::Quit()
 {
 	system("cls");
 	Buff = 0;
+	times = 0;      //彩蛋归0
 	cout<<endl;
 	cout<<endl;
 	cout<<endl;
 	cout<<endl;
 	cout<<endl;
 	cout<<"┌—————————————————————————┐\n";
-	cout<<"│              正在注销账号...                     │\n";
+	cout<<"│                   正在注销账号...                │\n";
 	cout<<"│                                                  │\n";
-	cout<<"│          感谢您使用：学生成绩管理系统            │\n";
+	cout<<"│             感谢您使用：学生成绩管理系统         │\n";
 	cout<<"│                                                  │\n";
-	cout<<"│   [简单说明]：程序登出界面，谢谢您的使用！       │\n";
+	cout<<"│      [简单说明]：程序登出界面，谢谢您的使用！    │\n";
 	cout<<"└—————————————————————————┘\n";
 	cout<<"      感谢您的使用，谢谢！按任意键回到登陆界面...\n";
 	system("pause>nul 2>nul");          
@@ -852,13 +888,13 @@ void App::Exit()
 }
 int App::MainMune()
 {
-	if(UserRight == 0)
+	if(UserRight == 0&&times ==0)
 	{
 		Aixin();
 		system("pause>nul 2>nul");
 		system("cls");
 		system("mode con cols=56 lines=20"); 
-		cout<<endl;
+			cout<<endl;
 			cout<<endl;
 			cout<<endl;
 			cout<<endl;
@@ -872,6 +908,7 @@ int App::MainMune()
 			cout<<"└—————————————————————————┘\n";
 			cout<<"            点击表示Wlx also love Yxm......\n";   
 			system("pause>nul 2>nul");
+		times = 1;
 	}
 	ifstream CopySource;
 	CopySource.open("StudentList.txt",ios_base::in);

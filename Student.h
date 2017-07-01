@@ -1,9 +1,11 @@
 #include<cstring>
 #include<fstream>
+#include"vclass.h"
 #pragma warning(disable:4996)
 using namespace std;
 enum subject{Calculus,Linear,Discrete};
-class Student{
+class Student:public vclass 
+{
 public:
 	Student(char *s = "*",int GradeCalculus = 0,int GradeLinear = 0,int GradeDiscrete = 0);
 	void SetName(char *s);

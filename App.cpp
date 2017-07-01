@@ -117,10 +117,9 @@ void App::ChangeScore(){
 					cout<<"│    [简单说明]：修改成绩界面，谢谢您的使用！      │\n";
 					cout<<"└—————————————————————————┘\n";
 					int SubjectNumber;
-					bool Fault = true;
 					cin>>SubjectNumber;
 					system("cls");
-					if(cin.fail()||SubjectNumber!=1||SubjectNumber!=2||SubjectNumber!=3||SubjectNumber!=4){cin.clear();cin.sync();Fault = false;}
+					if(cin.fail()||SubjectNumber!=1||SubjectNumber!=2||SubjectNumber!=3||SubjectNumber!=4){cin.clear();cin.sync();}
 					if(SubjectNumber==1)
 					{
 						cout<<"确定要修改"<<Tempname<<"同学的微积分成绩吗？(y/n)"<<endl;
@@ -200,7 +199,7 @@ void App::ChangeScore(){
 								cout<<"*********************修改成功！*************************"<<endl;
 							}
 					}
-					if(!Fault)
+					else
 					{
 						system("cls");
 						cout<<endl;
@@ -301,10 +300,9 @@ void App::FindScore()
 				cout<<"│    [简单说明]：查询成绩界面，谢谢您的使用！      │\n";
 				cout<<"└—————————————————————————┘\n";
 				int SubjectNumber;
-				bool Fault;
 				cin>>SubjectNumber;
 				system("cls");
-				if(cin.fail()||SubjectNumber!=1||SubjectNumber!=2||SubjectNumber!=3||SubjectNumber!=4){cin.clear();cin.sync();Fault = false;}
+				if(cin.fail()||SubjectNumber!=1||SubjectNumber!=2||SubjectNumber!=3||SubjectNumber!=4){cin.clear();cin.sync();}
 			if(SubjectNumber==1||SubjectNumber==2||SubjectNumber==3)
 	//		cout<<"这门课程的成绩是:"<<list[i].GetGrade()[SubjectNumber-1]<<endl;
 				{
@@ -324,7 +322,7 @@ void App::FindScore()
 				cout<<left<<setw(4)<<list[i].GetGrade()[2]<<"    \n";
 				cout<<"└—————————————————————————┘\n";
 				}
-				if(!Fault)
+			else
 				{
 						system("cls");
 						cout<<endl;

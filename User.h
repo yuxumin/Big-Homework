@@ -1,10 +1,12 @@
 #include<iostream>
 #include<cstring>
+#include"vclass.h"
 #pragma warning(disable:4996)
 using namespace std;
 #ifndef USER_H
 #define USER_H
-class user{
+class user:public vclass 
+{
 public:
 	user(char*n="*",char *p="*",int type = 1);   //1ÊÇÑ§Éú
 	char * Getname();

@@ -88,6 +88,7 @@
     <ClInclude Include="App.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="vclass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

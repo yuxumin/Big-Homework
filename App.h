@@ -2,7 +2,8 @@
 using namespace std;
 #ifndef APP_H
 #define APP_H
-class App{	
+class App
+{	
 public:
 	friend class Student;
 	App(bool a):Continue(a){}

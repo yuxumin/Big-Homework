@@ -31,7 +31,7 @@ void Student::SetDiscrete(int a)
 }
 void Student::Fout(ofstream& of)
 {
-	of<<this->name<<'*'<<this->Grade[0]<<'*'<<this->Grade[1]<<'*'<<this->Grade[2]<<endl;
+	of<<this->name<<'*'<<this->Grade[0]<<'*'<<this->Grade[1]<<'*'<<this->Grade[2]<<'*'<<GetSemester()<<endl;
 }
 void Student::Fin(ifstream& inf)
 {
@@ -42,13 +42,16 @@ void Student::Fin(ifstream& inf)
 	char Tempscore1[4];
 	inf.getline(Tempscore1,4,'*');
 	char Tempscore2[4];
-	inf.getline(Tempscore2,4);
+	inf.getline(Tempscore2,4,'*');
+	char TempSemester[20];
+	inf.getline(TempSemester,19);
 	int tempscore[3];
 	sscanf(Tempscore0,"%d",&tempscore[0]);
 	sscanf(Tempscore1,"%d",&tempscore[1]);
 	sscanf(Tempscore2,"%d",&tempscore[2]);
 	this->SetName(Tempname);
 	this->SetScore(tempscore);
+	this->SetSemester(TempSemester);
 }
 void Student::SetName(char *s)
 {

@@ -30,6 +30,9 @@
     <ClCompile Include="..\..\ConsoleApplication14\ConsoleApplication14\源1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="semester.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="vclass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="semester.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

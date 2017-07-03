@@ -44,7 +44,7 @@ void FlushList(ofstream&of)
 {
 	for(int i =0;i<number-1;i++)
 	{
-		of<<list[i].GetName()<<'*'<<list[i].GetGrade()[0]<<'*'<<list[i].GetGrade()[1]<<'*'<<list[i].GetGrade()[2]<<endl;
+		of<<list[i].GetName()<<'*'<<list[i].GetGrade()[0]<<'*'<<list[i].GetGrade()[1]<<'*'<<list[i].GetGrade()[2]<<'*'<<list[i].GetSemester()<<endl;
 	}
 }
 void App::ChangeScore(){
@@ -122,13 +122,13 @@ void App::ChangeScore(){
 					if(cin.fail()||SubjectNumber!=1||SubjectNumber!=2||SubjectNumber!=3||SubjectNumber!=4){cin.clear();cin.sync();}
 					if(SubjectNumber==1)
 					{
-						cout<<"确定要修改"<<Tempname<<"同学的微积分成绩吗？(y/n)"<<endl;
+						cout<<"确定要修改"<<Tempname<<"同学"<<list[i].GetSemester()<<"的微积分成绩吗？(y/n)"<<endl;
 						char a;
 						cin>>a;
 						if (a=='n'||a=='N')  {Continue = false;	cout<<"任意键返回主菜单... ..."<<endl;system("pause>nul 2>nul");}
 						else 
 							{
-								cout<<Tempname<<"的原始微积分成绩为: "<<list[i].GetGrade()[0]<<" "<<endl;
+								cout<<Tempname<<list[i].GetSemester()<<"的原始微积分成绩为: "<<list[i].GetGrade()[0]<<" "<<endl;
 								cout<<"请输入新成绩： ";
 								int NewScore;
 								cin>>NewScore;
@@ -138,13 +138,13 @@ void App::ChangeScore(){
 					}
 					else if(SubjectNumber==2)
 					{
-						cout<<"确定要修改"<<Tempname<<"同学的线性代数成绩吗？(y/n)"<<endl;
+						cout<<"确定要修改"<<Tempname<<"同学"<<list[i].GetSemester()<<"的线性代数成绩吗？(y/n)"<<endl;
 						char a;
 						cin>>a;
 						if (a=='n'||a=='N')  {Continue = false;	cout<<"任意键返回主菜单... ..."<<endl;system("pause>nul 2>nul");}
 						else 
 							{
-								cout<<Tempname<<"的原始线性代数成绩为: "<<list[i].GetGrade()[1]<<" "<<endl;
+								cout<<Tempname<<list[i].GetSemester()<<"的原始线性代数成绩为: "<<list[i].GetGrade()[1]<<" "<<endl;
 								cout<<"请输入新成绩： ";
 								int NewScore;
 								cin>>NewScore;
@@ -154,13 +154,13 @@ void App::ChangeScore(){
 					}
 					else if(SubjectNumber==3)
 					{
-						cout<<"确定要修改"<<Tempname<<"同学的离散数学成绩吗？(y/n)"<<endl;
+						cout<<"确定要修改"<<Tempname<<"同学"<<list[i].GetSemester()<<"的离散数学成绩吗？(y/n)"<<endl;
 						char a;
 						cin>>a;
 						if (a=='n'||a=='N')  {Continue = false;	cout<<"任意键返回主菜单... ..."<<endl;system("pause>nul 2>nul");}
 						else 
 							{
-								cout<<Tempname<<"的原始离散数学成绩为: "<<list[i].GetGrade()[2]<<" "<<endl;
+								cout<<Tempname<<list[i].GetSemester()<<"的原始离散数学成绩为: "<<list[i].GetGrade()[2]<<" "<<endl;
 								cout<<"请输入新成绩： ";
 								int NewScore;
 								cin>>NewScore;
@@ -170,13 +170,13 @@ void App::ChangeScore(){
 					}
 					else if(SubjectNumber==4)
 					{
-						cout<<"确定要修改"<<Tempname<<"同学的全部成绩吗？(y/n)"<<endl;
+						cout<<"确定要修改"<<Tempname<<"同学"<<list[i].GetSemester()<<"的全部成绩吗？(y/n)"<<endl;
 						char a;
 						cin>>a;
 						if (a=='n'||a=='N')  {Continue = false;	cout<<"任意键返回主菜单... ..."<<endl;system("pause>nul 2>nul");}
 						else 
 							{
-								cout<<Tempname<<"的原始成绩为: "<<endl;
+								cout<<Tempname<<list[i].GetSemester()<<"的原始成绩为: "<<endl;
 								cout<<"┌—————————————————————————┐\n";
 								cout<<" "<<Tempname<<"      "<<Subject[0]<<"                       ";
 								cout<<left<<setw(4)<<list[i].GetGrade()[0]<<"    \n";
@@ -306,13 +306,15 @@ void App::FindScore()
 			if(SubjectNumber==1||SubjectNumber==2||SubjectNumber==3)
 	//		cout<<"这门课程的成绩是:"<<list[i].GetGrade()[SubjectNumber-1]<<endl;
 				{
+				cout<<list[i].GetSemester()<<endl;
 				cout<<"┌—————————————————————————┐\n";
-				cout<<"│"<<Tempname<<"      "<<Subject[SubjectNumber-1]<<"                       ";
-				cout<<left<<setw(4)<<list[i].GetGrade()[SubjectNumber-1]<<"   │\n";
+				cout<<" "<<Tempname<<"      "<<Subject[SubjectNumber-1]<<"                       ";
+				cout<<left<<setw(4)<<list[i].GetGrade()[SubjectNumber-1]<<"   \n";
 				cout<<"└—————————————————————————┘\n";
 				}
 			else if(SubjectNumber==4)
 				{
+				cout<<list[i].GetSemester()<<endl;
 				cout<<"┌—————————————————————————┐\n";
 				cout<<" "<<Tempname<<"      "<<Subject[0]<<"                       ";
 				cout<<left<<setw(4)<<list[i].GetGrade()[0]<<"    \n";
@@ -397,6 +399,7 @@ void App::SetScore(){
 		int FindIt;
 		while(Continue)
 		{
+			system("cls");
 			cout<<"输入学生姓名（小于20个字符）"<<endl;
 			cin.getline(Temp,19);
 			FindIt = 0;

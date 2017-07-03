@@ -1,10 +1,14 @@
 #include<cstring>
 #include<fstream>
 #include"vclass.h"
+#include"Semester.h"
 #pragma warning(disable:4996)
 using namespace std;
 enum subject{Calculus,Linear,Discrete};
-class Student:public vclass 
+#ifndef K
+#define K
+
+class Student:public vclass ,public Semester
 {
 public:
 	Student(char *s = "*",int GradeCalculus = 0,int GradeLinear = 0,int GradeDiscrete = 0);
@@ -22,3 +26,4 @@ private:
 	char name[20];
 	int Grade[3];
 };
+#endif // !K
